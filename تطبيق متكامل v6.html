@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MASTER KEY - باحث الريموت</title>
+    
+    <meta name="application-name" content="MASTER KEY">
+    <meta name="apple-mobile-web-app-title" content="MASTER KEY">
+    <meta name="apple-mobile-web-app-capable" content="yes"> 
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#FFD700">
+
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI0ZGRDcwMCIgY2xhc3M9IndpZHRoLTYgaGVpZHRoLTYiPgogIDxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTIzIDIuMjVjMCAuNDE0LS4zMzYuNzUtLjc1Ljc1SDMuNzVjLS40MTQgMC0uNzUtLjMzNi0uNzUtLjc1VjEuNWMwLS40MTQuMzM2LS43NS43NS0uNzVoMTguNWMuNDE0IDAgLjc1LjMzNi43NS43NXYuNzVaTTE5LjUgNmEuNzUuNzUgMCAwIDAtLjc1Ljc1djExLjg5N0EzLjM3MiAzLjM3MiAwIDAgMCAxNi4xMjUgMjFhMy4zNzIgMy4zNzIgMCAwIDAtMi42MjUtMS4zNTNIMTAuMTI1Yy0uNDc3IDAtLjkzLS4xMTktMS4zMi0uMzMxQTQuNDgwIDQuNDgwIDAgMCAxIDUuMjUgMTQuODk2VjYuNzVhLjc1Ljc1IDAgMCAwLTEuNSAwVjE1LjEyYzAgMS43MjIgMS4xNzIgMy4yMSA1LjM3MyAzLjg3MWEzLjM3NSAzLjM3NSAwIDEgMCA0Ljc1NCAwYzQuMjAxLS42NjEgNS4zNzMtMi4xNDkgNS4zNzMtMy44NzFWNi43NUEuNzUuNzUgMCAwIDAgMTkuNSA2WiBtLTMuMzc1IDEyLjU2M2EyLjEyNSAyLjEyNSAwIDEgMCAwLTQuMjUgMi4xMjUgMi4xMjUgMCAwIDAgMC budgetaryIikgZmlsbD0iI0ZGRDcwMCIvPgo8L3N2Zz4K">
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI0ZGRDcwMCIgY2xhc3M9IndpZHRoLTYgaGVpZHRoLTYiPgogIDxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTIzIDIuMjVjMCAuNDE0LS4zMzYuNzUtLjc1Ljc1SDMuNzVjLS40MTQgMC0uNzUtLjMzNi0uNzUtLjc1VjEuNWMwLS40MTQuMzM2LS43NS43NS0uNzVoMTguNWMuNDE0IDAgLjc1LjMzNi43NS43NXYuNzVaTTE5LjUgNmEuNzUuNzUgMCAwIDAtLjc1Ljc1djExLjg5N0EzLjM3MiAzLjM3MiAwIDAgMCAxNi4xMjUgMjFhMy4zNzIgMy4zNzIgMCAwIDAtMi42MjUtMS4zNTNIMTAuMTI1Yy0uNDc3IDAtLjkzLS4xMTktMS4zMi0uMzMxQTQuNDgwIDQuNDgwIDAgMCAxIDUuMjUgMTQuODk2VjYuNzVhLjc1Ljc1IDAgMCAwLTEuNSAwVjE1LjEyYzAgMS43MjIgMS4xNzIgMy4yMSA1LjM3MyAzLjg3MWEzLjM3NSAzLjM3NSAwIDEgMCA0Ljc1NCAwYzQuMjAxLS42NjEgNS4zNzMtMi4xNDkgNS4zNzMtMy44NzFWNi43NUEuNzUuNzUgMCAwIDAgMTkuNSA2WiBtLTMuMzc1IDEyLjU2M2EyLjEyNSAyLjEyNSAwIDEgMCAwLTQuMjUgMi4xMjUgMi4xMjUgMCAwIDAgMC budgetaryIikgZmlsbD0iI0ZGRDcwMCIvPgo8L3N2Zz4K">
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #FFD700;
+            --secondary-color: #ffc300;
+            --text-color: #e2e8f0; /* slate-200 */
+            --bg-dark: #1a202c;  /* slate-900 */
+            --bg-light: #2d3748; /* slate-800 */
+            --border-color: #FFD700;
+            --highlight-color: #ffc300;
+            --success-color: #10b981; /* emerald-500 */
+            --error-color: #ef4444; /* red-500 */
+            --info-color: #3b82f6; /* blue-500 */
+            --success-feedback: #22c55e; /* green-500 */
+            --metal-bg: #374151; /* gray-700 */
+            --metal-border: #4b5563; /* gray-600 */
+            --metal-text: #d1d5db; /* gray-300 */
+            --metal-hover-bg: #4b5563; /* gray-600 */
+            --metal-hover-text: #ffffff; 
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-color);
+            overflow: hidden; /* منع التمرير بسبب القفل */
+        }
+        
+        .latin-font {
+            font-family: 'Lato', sans-serif;
+        }
+        
+        .text-gold {
+            color: var(--primary-color);
+        }
+
+        .card-container {
+            background-color: var(--bg-light);
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-color);
+        }
+
+        .app-input {
+            background-color: var(--bg-dark);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            border-radius: 0.5rem;
+            transition: all 0.2s ease-in-out;
+            padding: 0.75rem; /* توحيد padding */
+        }
+        
+        .app-input::placeholder {
+            color: #9ca3af; /* gray-400 */
+        }
+
+        .app-input:focus {
+            outline: none;
+            border-color: var(--highlight-color);
+            box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.4);
+        }
+        
+        .app-input option {
+            background-color: var(--bg-dark);
+            color: var(--text-color);
+        }
+        
+        .input-with-icon {
+            position: relative;
+        }
+        .input-icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0.75rem; /* 12px */
+            color: var(--border-color);
+            opacity: 0.5;
+            pointer-events: none; 
+        }
+        .app-input.with-icon,
+        select.app-input.with-icon {
+            padding-right: 2.5rem; /* 40px */
+        }
+        select.app-input.with-icon {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-position: left 0.75rem center; 
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%239ca3af' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-size: 1.25em 1.25em;
+        }
+
+        .autocomplete-suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: var(--bg-dark);
+            border: 1px solid var(--border-color);
+            border-top: none;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 10;
+            display: none;
+            border-radius: 0 0 0.5rem 0.5rem;
+        }
+        .suggestion-item {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            color: var(--text-color);
+            transition: background-color 0.2s ease;
+        }
+        .suggestion-item:hover {
+            background-color: #374151; /* gray-700 */
+        }
+
+        .app-button, .clear-button, #login-btn, #clear-history-btn, .metal-button { 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem; 
+        }
+        
+        .app-button {
+            background-color: var(--primary-color);
+            color: var(--bg-dark);
+            font-weight: 600;
+            border-radius: 0.5rem;
+            transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            min-height: 48px;
+            padding: 0.75rem 1rem; 
+        }
+
+        .app-button:hover {
+            background-color: var(--secondary-color);
+            box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4);
+        }
+        
+        .clear-button {
+            background-color: transparent;
+            color: #cbd5e0; /* gray-300 */
+            border: 1px solid var(--border-color);
+            font-weight: 400;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease-in-out;
+            min-height: 48px;
+             padding: 0.75rem 1rem; 
+        }
+        .clear-button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            border-color: var(--highlight-color);
+        }
+
+        .loader {
+            width: 24px;
+            height: 24px;
+            border: 4px solid var(--bg-dark);
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        .loader.hidden {
+            display: none;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .tab-btn {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #9ca3af; /* gray-400 */
+            transition: all 0.2s ease;
+            font-size: 0.875rem;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .tab-btn:hover {
+            color: #e2e8f0; /* slate-200 */
+        }
+        .tab-btn.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+            font-weight: 600;
+        }
+        .search-panel {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        .search-panel.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .accordion-header {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: var(--bg-dark);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+            transition: background-color 0.2s ease;
+        }
+        .accordion-header:hover {
+            background-color: #374151; /* gray-700 */
+        }
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+        .accordion-header.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+            padding: 0 1rem;
+            background-color: var(--bg-dark);
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .accordion-content.active {
+            max-height: 800px;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .accordion-content .border-gray-700 {
+            border-color: #4b5563; /* gray-600 */
+        }
+
+        .accordion-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem; 
+            margin-left: 1rem; 
+        }
+        .action-btn {
+            cursor: pointer;
+            color: #9ca3af; 
+            transition: all 0.2s ease;
+        }
+        .action-btn:hover {
+            color: #ffffff;
+        }
+
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .results-table td, .results-table th {
+            padding: 0.75rem 0.5rem;
+            text-align: right;
+            border-bottom: 1px solid #4b5563; /* gray-600 */
+        }
+        .results-table th {
+            color: var(--primary-color);
+            font-weight: 600;
+            background-color: #374151; /* gray-700 */
+        }
+        .results-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .alternative-card {
+            background-color: #374151; /* gray-700 */
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 1rem;
+        }
+        .scrollable-card-container {
+            max-height: 300px;
+            overflow-y: auto;
+            padding-left: 0.5rem;
+        }
+
+        .copy-btn {
+            cursor: pointer;
+            opacity: 0.6;
+            transition: all 0.2s ease;
+            margin-right: auto;
+            padding-left: 0.5rem;
+        }
+        .copy-btn:hover {
+            opacity: 1;
+        }
+        .copy-btn.copied {
+            color: var(--success-feedback) !important;
+            opacity: 1;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 40;
+            display: none;
+            backdrop-filter: blur(5px);
+        }
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            width: 90%;
+            max-width: 400px;
+            z-index: 50;
+            display: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .modal-close-btn {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.2s ease;
+        }
+        .modal-close-btn:hover {
+            opacity: 1;
+        }
+
+        .modal-icon-link {
+            display: flex;
+            align-items: center;
+            background-color: var(--bg-dark);
+            border: 1px solid var(--border-color);
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: background-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .modal-icon-link:hover {
+            background-color: #374151; /* gray-700 */
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+        .modal-icon-link svg {
+            width: 24px;
+            height: 24px;
+            margin-left: 0.75rem;
+            color: var(--primary-color);
+        }
+        
+        .history-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--bg-dark);
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .history-item:hover {
+            background-color: #374151; /* gray-700 */
+        }
+        .history-item span {
+            font-size: 0.875rem;
+            color: var(--text-color);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .history-item .history-type {
+            font-size: 0.75rem;
+            color: var(--primary-color);
+            flex-shrink: 0;
+            margin-left: 0.5rem;
+        }
+
+        #clear-history-btn {
+            color: #f87171; 
+            font-size: 0.875rem;
+            transition: color 0.2s ease;
+        }
+        #clear-history-btn:hover {
+            color: #ef4444; 
+        }
+
+        #vin-counter {
+            font-size: 0.75rem;
+            font-family: 'Lato', sans-serif;
+            margin-right: 0.5rem;
+            color: var(--error-color); 
+        }
+        #vin-counter.valid {
+            color: var(--success-feedback); 
+        }
+        
+        .empty-state-container {
+            text-align: center;
+            padding: 2rem 1rem;
+            border: 2px dashed #4b5563; /* gray-600 */
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+        }
+        .empty-state-container svg {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 1rem auto;
+            color: #9ca3af; 
+        }
+        .empty-state-container p {
+            font-weight: 600;
+            color: #d1d5db; /* gray-300 */
+        }
+        .empty-state-container .sub-text { 
+             color: #9ca3af; 
+             font-size: 0.875rem;
+             font-weight: normal;
+             margin-top: 0.25rem;
+        }
+
+        #security-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(26, 32, 44, 0.9);
+            backdrop-filter: blur(8px);
+            z-index: 9998;
+        }
+        #security-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(145deg, #4b5563, #374151); /* gray-600 to gray-700 */
+            border: 2px solid #6b7280; /* gray-500 */
+            border-radius: 1rem;
+            padding: 2rem;
+            width: 90%;
+            max-width: 380px;
+            z-index: 9999;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 0 10px rgba(255,255,255,0.05);
+            text-align: center;
+        }
+        #pin-container {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem; /* تعديل المسافة للشاشات الصغيرة */
+            sm:gap: 0.75rem; /* المسافة الأصلية للشاشات الأكبر */
+            margin: 2rem 0;
+            direction: ltr; 
+        }
+        #pin-container input {
+            width: 3.5rem; /* w-14 */
+            height: 4.5rem;
+            text-align: center;
+            font-size: 2rem;
+            font-family: 'Lato', sans-serif;
+            background-color: var(--bg-dark);
+            border: 2px solid #6b7280; /* gray-500 */
+            color: var(--text-color);
+            border-radius: 0.5rem;
+            caret-color: var(--primary-color);
+            transition: all 0.2s ease;
+        }
+        #pin-container input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.5);
+        }
+        #pin-container input::-webkit-outer-spin-button,
+        #pin-container input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        #pin-container input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+        #login-btn {
+            background-color: var(--primary-color);
+            color: var(--bg-dark);
+            font-weight: 700;
+            font-size: 1.125rem;
+            width: 100%;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        #login-btn:hover {
+            background-color: var(--secondary-color);
+            transform: scale(1.02);
+        }
+        #pin-error {
+            color: var(--error-color);
+            font-size: 0.875rem;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        #top-right-buttons { 
+            position: absolute;
+            top: 1rem;
+            left: 1rem; 
+            display: flex;
+            gap: 0.5rem; 
+            z-index: 10000; 
+            background-color: var(--metal-bg);
+            padding: 0.5rem; 
+            border-radius: 0.75rem; 
+            border: 1px solid var(--metal-border);
+            box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.1), 0 2px 4px rgba(0,0,0,0.4);
+        }
+
+        .metal-button {
+            background-color: transparent; 
+            color: var(--metal-text);
+            border: none;
+            padding: 0.5rem; 
+            border-radius: 0.5rem; 
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex; 
+            align-items: center;
+            gap: 0.25rem; 
+        }
+        .metal-button:hover {
+            color: var(--metal-hover-text);
+            background-color: var(--metal-hover-bg);
+             transform: scale(1.05); 
+        }
+        .metal-button:active {
+            transform: scale(0.95); 
+        }
+        /* إلغاء تأثير الدوران */
+        #sync-btn:hover, #sync-btn:active {
+            transform: scale(1.05); 
+        }
+        #sync-btn:active{
+             transform: scale(0.95);
+        }
+
+        .metal-button svg {
+            width: 1.25rem; /* 20px */
+            height: 1.25rem; /* 20px */
+        }
+        #contact-us-btn span { /* استهداف النص داخل زر اتصل بنا */
+             font-size: 0.875rem; /* 14px */
+             font-weight: 600;
+             color: var(--metal-text); /* لون النص الأساسي */
+             transition: color 0.2s ease; /* إضافة انتقال للون النص */
+        }
+         #contact-us-btn:hover span { /* تغيير لون النص عند المرور */
+             color: var(--metal-hover-text);
+         }
+
+    </style>
+</head>
+<body class="min-h-screen flex flex-col p-4">
+
+    <div id="top-right-buttons"> 
+        <button id="sync-btn" title="تحديث ومسح الكاش" aria-label="تحديث ومسح الكاش" class="metal-button">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+            </svg>
+        </button>
+        <button id="contact-us-btn" class="metal-button">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+            </svg>
+            <span>اتصل بنا</span>
+        </button>
+    </div>
+    
+    <div id="security-overlay"></div>
+    <div id="security-modal">
+        <div id="shield-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-20 h-20 mx-auto mb-4 text-gray-400">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 0 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+            </svg>
+        </div>
+        <h2 class="text-2xl font-bold text-white mb-6">مفتاح تصريح الدخول</h2>
+        
+        <div id="pin-container" class="gap-2 sm:gap-3">
+            <input type="text" pattern="[0-9]*" inputmode="numeric" maxlength="1" class="pin-input w-14">
+            <input type="text" pattern="[0-9]*" inputmode="numeric" maxlength="1" class="pin-input w-14">
+            <input type="text" pattern="[0-9]*" inputmode="numeric" maxlength="1" class="pin-input w-14">
+            <input type="text" pattern="[0-9]*" inputmode="numeric" maxlength="1" class="pin-input w-14">
+        </div>
+
+        <button id="login-btn">
+            <span>دخول</span>
+        </button>
+        <p id="pin-error">الرمز خاطئ. جارٍ إعادة التوجيه...</p>
+    </div>
+    <div id="contact-modal-overlay" class="modal-overlay"></div>
+    <div id="contact-modal" class="modal">
+        <button id="contact-modal-close-btn" class="modal-close-btn">&times;</button>
+        <h3 class="text-xl font-bold text-center text-gold mb-4 flex items-center justify-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-3.86 8.25-8.625 8.25a9.06 9.06 0 0 1-2.093-.334c-.267-.052-.49-.188-.656-.39l-1.68-2.128a1.125 1.125 0 0 0-1.581-.229l-1.928 1.445A9 9 0 0 1 3 12c0-4.556 3.86-8.25 8.625-8.25S21 7.444 21 12Z" />
+            </svg>
+            <span>تواصل معنا</span>
+        </h3>
+        <p class="text-center text-gray-300 mb-6">نستقبل جميع آرائكم واقتراحاتكم</p>
+        
+        <div class="space-y-4">
+            <a href="https://wa.me/9647828937302" target="_blank" rel="noopener noreferrer" class="modal-icon-link">
+                <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.06 21.94L7.31 20.58C8.75 21.38 10.36 21.82 12.04 21.82C17.5 21.82 21.95 17.37 21.95 11.91C21.95 6.45 17.5 2 12.04 2ZM12.04 20.13C10.5 20.13 9.01 19.72 7.7 18.96L7.33 18.73L4.31 19.59L5.19 16.67L4.95 16.29C4.1 14.89 3.64 13.34 3.64 11.91C3.64 7.33 7.42 3.54 12.04 3.54C16.66 3.54 20.44 7.33 20.44 11.91C20.44 16.49 16.66 20.13 12.04 20.13ZM17.9 14.49C17.65 14.37 16.65 13.88 16.43 13.8C16.2 13.72 16.03 13.68 15.86 13.92C15.69 14.16 15.17 14.75 15 14.92C14.83 15.09 14.66 15.11 14.41 14.99C13.93 14.76 13.06 14.44 12.06 13.54C11.26 12.84 10.7 12.01 10.58 11.77C10.46 11.53 10.58 11.41 10.69 11.3C10.79 11.2 10.92 11.04 11.05 10.89C11.18 10.74 11.22 10.62 11.3 10.45C11.38 10.28 11.34 10.12 11.28 10C11.22 9.88 10.78 8.84 10.6 8.42C10.42 8 10.24 8.04 10.09 8.03C9.95 8.02 9.77 8.02 9.6 8.02C9.43 8.02 9.18 8.06 8.97 8.29C8.76 8.52 8.24 9.01 8.24 10.05C8.24 11.09 8.99 12.09 9.11 12.26C9.23 12.43 10.74 14.85 13.11 15.85C13.76 16.14 14.28 16.3 14.71 16.41C15.29 16.56 15.79 16.52 16.21 16.3C16.67 16.06 17.53 15.49 17.75 14.8C17.97 14.11 17.97 13.56 17.9 13.44C17.82 13.31 17.65 13.23 17.41 13.11L17.9 14.49Z"/>
+                </svg>
+                <span>مراسلة عبر واتساب</span>
+            </a>
+            <a href="https://iqsd2020-ctrl.github.io/Web/" target="_blank" rel="noopener noreferrer" class="modal-icon-link">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-1.04.15-2.04.42-3h15.16c.27.96.42 1.96.42 3s-.15 2.04-.42 3H4.42C4.15 14.04 4 13.04 4 12zm8 8c-1.93 0-3.68-.78-4.95-2.05L8.4 16.6c.7.3 1.45.5 2.25.6c.8.1 1.6.1 2.4-.1c.8-.2 1.55-.4 2.25-.7l1.35 1.35C15.68 19.22 13.93 20 12 20zm0-16c1.93 0 3.68.78 4.95 2.05L15.6 7.4c-.7-.3-1.45-.5-2.25-.6c-.8-.1-1.6-.1-2.4.1c-.8.2-1.55.4-2.25.7L7.05 4.05C8.32 2.78 10.07 2 12 2z"></path>
+                </svg>
+                <span>زيارة الموقع الرسمي</span>
+            </a>
+        </div>
+    </div>
+
+
+    <main class="flex-grow flex items-center justify-center relative pt-16 sm:pt-4">
+        <div class="w-full max-w-lg p-4 sm:p-6 md:p-8 card-container">
+        
+        <h1 class="text-3xl font-bold text-center mb-6 text-gold latin-font">
+            MASTER KEY
+        </h1>
+        <p class="text-center text-sm mb-8 text-gray-400">
+            ابحث عن معلومات الريموتات لسيارتك بدقة وفعالية.
+        </p>
+
+        <div class="flex border-b border-gray-700 mb-6">
+            <button id="specs-tab" class="tab-btn active">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h3.75" />
+                </svg>
+                <span>البحث بالمواصفات</span>
+            </button>
+            <button id="reverse-tab" class="tab-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+                </svg>
+                <span>البحث العكسي</span>
+            </button>
+            <button id="vin-tab" class="tab-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 4.5A.75.75 0 0 1 4.5 3.75h15a.75.75 0 0 1 .75.75v15a.75.75 0 0 1-.75.75h-15a.75.75 0 0 1-.75-.75v-15ZM8.25 9v6m3-6v6m3-6v6m3-6v6M3 9h18" />
+                </svg>
+                <span>البحث بالـ VIN</span>
+            </button>
+        </div>
+
+        <form id="ai-form" class="mb-6">
+            
+            <div id="specs-search-panel" class="search-panel active space-y-5">
+                <div class="input-with-icon">
+                    <label for="year" class="block text-sm font-medium mb-1 text-gray-300">السنة</label>
+                    <input type="number" id="year" name="year" class="w-full app-input with-icon latin-font" placeholder="مثال: 2024">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="input-icon w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+                    </svg>
+                </div>
+                
+                <div class="relative input-with-icon">
+                    <label for="type" class="block text-sm font-medium mb-1 text-gray-300">ماركة السيارة</label>
+                    <input type="text" id="type" name="type" class="w-full app-input with-icon" placeholder="مثال: تويوتا" autocomplete="off">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="input-icon w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.125-.504 1.125-1.125V14.25m-17.25 4.5h16.5m-16.5 0T3.375 14.25m16.5 4.5c0 .621-.504 1.125-1.125 1.125h-1.5c-.621 0-1.125-.504-1.125-1.125v-1.5c0-.621.504-1.125 1.125-1.125H21v-1.5m-16.5 4.5c0 .621.504 1.125 1.125 1.125h1.5c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375v1.5M9 13.5l3 3m0 0l3-3m-3 3v-6m0 1.5H7.5m3-1.5h1.5m4.5 1.5H15" />
+                    </svg>
+                    <div id="type-suggestions" class="autocomplete-suggestions"></div>
+                </div>
+
+                <div class="relative input-with-icon">
+                    <label for="model" class="block text-sm font-medium mb-1 text-gray-300">الطراز</label>
+                    <input type="text" id="model" name="model" class="w-full app-input with-icon" placeholder="مثال: كامري" autocomplete="off">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="input-icon w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 8.25 9 15l-3-3m6 6 3.75-3.75M3 12h18M3 12a9 9 0 1 1 18 0 9 9 0 0 1-18 0Z" />
+                    </svg>
+                    <div id="model-suggestions" class="autocomplete-suggestions"></div>
+                </div>
+
+                <div class="input-with-icon">
+                    <label for="market" class="block text-sm font-medium mb-1 text-gray-300">السوق</label>
+                    <select id="market" name="market" class="w-full app-input with-icon">
+                        <option value="" disabled selected>اختر السوق...</option>
+                        <option value="american">السوق الأمريكي</option>
+                        <option value="european">السوق الأوروبي</option>
+                        <option value="asian">السوق الآسيوي</option>
+                        <option value="korean">السوق الكوري</option>
+                        <option value="gulf">السوق الخليجي</option>
+                        <option value="chinese">السوق الصيني</option>
+                        <option value="global">السوق العالمي</option>
+                    </select>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="input-icon w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c.506 0 1.027-.02 1.544-.06M12 21c-.506 0-1.027-.02-1.544-.06M4.28 14.251c-.08.43-.12.87-.12 1.32 0 4.97 4.03 9 9 9s9-4.03 9-9c0-.45-.04-.89-.12-1.32M5.28 14.251A8.96 8.96 0 0 1 12 5.25c1.928 0 3.72.607 5.166 1.62M5.28 14.251A8.96 8.96 0 0 0 12 19.5c1.928 0 3.72-.607 5.166-1.62" />
+                    </svg>
+                </div>
+            </div>
+
+            <div id="reverse-search-panel" class="search-panel space-y-5">
+                <div class="input-with-icon">
+                    <label for="fcc_input" class="block text-sm font-medium mb-1 text-gray-300">FCC ID</label>
+                    <input type="text" id="fcc_input" name="fcc_input" class="w-full app-input with-icon latin-font" placeholder="مثال: HYQ14FBA" style="text-transform: uppercase;">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="input-icon w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.288 15.038a5.25 5.25 0 0 1 7.424 0M5.136 11.962a8.25 8.25 0 0 1 13.728 0M2.002 8.886a11.25 11.25 0 0 1 19.996 0M12 5.25v.008" />
+                    </svg>
+                </div>
+                <div class="input-with-icon">
+                    <label for="pn_input" class="block text-sm font-medium mb-1 text-gray-300">Part Number (P/N)</label>
+                    <input type="text" id="pn_input" name="pn_input" class="w-full app-input with-icon latin-font" placeholder="مثال: 89904-0E120" style="text-transform: uppercase;">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="input-icon w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 8.25h13.5m-13.5 7.5h13.5m-1.5-15l-3 3m0 0l-3-3m3 3V1.5m3 12l-3 3m0 0l-3-3m3 3v-1.5m0 9l3-3m0 0l3 3m-3-3v-1.5m-9 3l3 3m0 0l3-3m-3 3V18" />
+                    </svg>
+                </div>
+                <p class="text-xs text-gray-400 text-center">أدخل أحد الحقلين أو كلاهما لنتائج أدق.</p>
+            </div>
+
+            <div id="vin-search-panel" class="search-panel space-y-5">
+                <div class="input-with-icon">
+                    <div class="flex justify-between items-center mb-1">
+                        <label for="vin_input" class="block text-sm font-medium text-gray-300">رقم الشاصي (VIN)</label>
+                        <span id="vin-counter">(0/17)</span>
+                    </div>
+                    <input type="text" id="vin_input" name="vin_input" class="w-full app-input with-icon latin-font" placeholder="أدخل 17 رمزاً..." maxlength="17" style="text-transform: uppercase;">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="input-icon w-5 h-5">
+                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 4.5A.75.75 0 0 1 4.5 3.75h15a.75.75 0 0 1 .75.75v15a.75.75 0 0 1-.75.75h-15a.75.75 0 0 1-.75-.75v-15ZM8.25 9v6m3-6v6m3-6v6m3-6v6M3 9h18" />
+                    </svg>
+                </div>
+                <p class="text-xs text-gray-400 text-center">سيقوم النظام بتحليل الـ VIN والبحث عن القطع المطابقة.</p>
+                <p class="text-xs text-yellow-400 text-center bg-gray-800 p-2 rounded-md border border-yellow-500">
+                    ملاحظة: هذه الوظيفة تجريبية ولا يمكن الاعتماد عليها مع السيارات الحديثة.
+                </p>
+            </div>
+            
+            
+            <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                <button type="submit" class="w-full sm:w-3/4 app-button">
+                    <svg id="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                    </svg>
+                    <span id="progress-text" class="w-auto text-center">ابحث عن الريموت</span> 
+                    <div id="loader" class="loader hidden"></div>
+                </button>
+                <button type="button" id="clear-form-btn" class="w-full sm:w-1/4 clear-button latin-font">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+                    <span>مسح</span>
+                </button>
+            </div>
+        </form>
+        
+        <div id="result-container" class="mt-8">
+            <h2 class="text-xl font-semibold mb-4 text-gray-200 flex items-center gap-2" id="results-title" style="display: none;">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+                <span>النتائج:</span>
+            </h2>
+            <div id="result-box" class="space-y-4">
+            </div>
+            <p id="message-box" class="mt-4 p-3 rounded-md text-center text-sm font-medium" style="display: none; background-color: var(--secondary-color); color: white;"></p>
+        </div>
+        
+        <div id="history-container" class="mt-8 w-full" style="display: none;">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-semibold text-gray-200 flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18c-2.305 0-4.408.867-6 2.292m0-14.25v14.25" />
+                    </svg>
+                    <span>سجل البحث</span>
+                </h2>
+                <button id="clear-history-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12.578 0c-.27.004-.537.01-.804.018c-3.3 0-6.095 2.24-6.095 5.438c0 3.199 2.79 5.438 6.095 5.438c.267 0 .534-.014.804-.018m-1.209 0v-3.614m1.209 3.614a48.108 48.108 0 0 1 3.478-.397m7.5 0a48.108 48.108 0 0 0-3.478-.397m0 0a48.108 48.108 0 0 1-3.478-.397m0 0c-1.013 0-2.015.09-3 .255" />
+                    </svg>
+                    <span>مسح السجل</span>
+                </button>
+            </div>
+            <div id="history-box" class="space-y-2 max-h-48 overflow-y-auto pr-2">
+            </div>
+        </div>
+
+    </div>
+    </main>
+
+    <footer class="w-full max-w-lg text-center py-4 mx-auto">
+        <a href="https://iqsd2020-ctrl.github.io/Web/" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="text-sm text-gold hover:text-yellow-300 hover:underline transition-colors duration-200">
+            جميع الحقوق محفوظة &copy; MASTER KEY
+        </a>
+    </footer>
+
+    <template id="empty-state-template">
+        <div class="empty-state-container">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
+            <p>لم يتم العثور على نتائج مطابقة</p>
+            <p class="sub-text">يرجى التأكد من البيانات المدخلة أو تجربة بحث أوسع.</p> 
+        </div>
+    </template>
+
+
+    <script>
+        // --- الكود الجافاسكريبت بالكامل كما هو في النسخة السابقة ---
+        // (تم التأكد من صحته وتضمين التحسينات السابقة)
+        
+        const GEMINI_API_KEY = "AIzaSyByERNaTPUtuleb62ok6YAOlADKoiSM-zM";
+        const DEEPSEEK_API_KEY = "sk-3ac8d0208edd4ada9e949eb366a4a262";
+
+        const form = document.getElementById('ai-form');
+        const resultContainer = document.getElementById('result-container');
+        const resultBox = document.getElementById('result-box');
+        const messageBox = document.getElementById('message-box');
+        const progressText = document.getElementById('progress-text');
+        const loader = document.getElementById('loader');
+        const resultsTitle = document.getElementById('results-title');
+        const clearFormBtn = document.getElementById('clear-form-btn');
+        const submitButton = form.querySelector('button[type="submit"]');
+        const searchIcon = document.getElementById('search-icon'); 
+        
+        const contactButton = document.getElementById('contact-us-btn');
+        const contactModalOverlay = document.getElementById('contact-modal-overlay');
+        const contactModal = document.getElementById('contact-modal');
+        const contactCloseModalBtn = document.getElementById('contact-modal-close-btn');
+
+        const typeInput = document.getElementById('type');
+        const modelInput = document.getElementById('model');
+        const typeSuggestions = document.getElementById('type-suggestions');
+        const modelSuggestions = document.getElementById('model-suggestions');
+        const vinInput = document.getElementById('vin_input');
+        const vinCounter = document.getElementById('vin-counter');
+        
+        let carMakes = [];
+        let carModels = [];
+        
+        const carMakesUrl = 'https://raw.githubusercontent.com/iqsd2020-ctrl/Sjad/refs/heads/main/%D9%85%D8%A7%D8%B1%D9%83%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA.csv';
+        const carModelsUrl = 'https://raw.githubusercontent.com/iqsd2020-ctrl/Sjad/refs/heads/main/%D8%B7%D8%B1%D8%A7%D8%B2%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA.csv';
+        
+        let currentSearchMode = 'specs'; 
+        const tabs = document.querySelectorAll('.tab-btn');
+        const panels = document.querySelectorAll('.search-panel');
+
+        const historyContainer = document.getElementById('history-container');
+        const historyBox = document.getElementById('history-box');
+        const clearHistoryBtn = document.getElementById('clear-history-btn');
+        const MAX_HISTORY = 10;
+        
+        const VIN_REGEX = /^[A-HJ-NPR-Z0-9]{17}$/;
+
+
+        function openModal(modal, overlay) {
+            overlay.style.display = 'block';
+            modal.style.display = 'block';
+        }
+        function closeModal(modal, overlay) {
+            overlay.style.display = 'none';
+            modal.style.display = 'none';
+        }
+
+        contactButton.addEventListener('click', () => openModal(contactModal, contactModalOverlay));
+        contactCloseModalBtn.addEventListener('click', () => closeModal(contactModal, contactModalOverlay));
+        contactModalOverlay.addEventListener('click', () => closeModal(contactModal, contactModalOverlay));
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                panels.forEach(p => p.classList.remove('active'));
+                
+                tab.classList.add('active');
+                const targetPanelId = tab.id.replace('-tab', '-search-panel');
+                document.getElementById(targetPanelId).classList.add('active');
+                
+                currentSearchMode = tab.id.split('-')[0];
+                
+                resultBox.innerHTML = '';
+                resultsTitle.style.display = 'none';
+                messageBox.style.display = 'none';
+            });
+        });
+
+        form.addEventListener('submit', async function(event) {
+            event.preventDefault(); 
+            
+            messageBox.style.display = 'none';
+            resultBox.innerHTML = '';
+            resultsTitle.style.display = 'none';
+
+            progressText.style.display = 'none';
+            if (searchIcon) searchIcon.style.display = 'none'; 
+            loader.classList.remove('hidden');
+            submitButton.disabled = true;
+
+            let userQuery = '';
+            let systemInstruction = '';
+            let displayTitle = { make: '', model: '', year: '' };
+            let searchData = {};
+            let resultData = {}; 
+
+            try {
+                if (currentSearchMode === 'specs') {
+                    const year = document.getElementById('year').value;
+                    const type = typeInput.value;
+                    const model = modelInput.value;
+                    const market = document.getElementById('market').value;
+                    
+                    if (!type || !model || !year || !market) {
+                        throw new Error("الرجاء ملء جميع حقول البحث بالمواصفات.");
+                    }
+
+                    userQuery = createSpecsQuery(year, type, model, market);
+                    systemInstruction = createSpecsSystemInstruction();
+                    displayTitle = { make: type, model: model, year: year };
+                    
+                    searchData = {
+                        mode: 'specs',
+                        id: `specs-${year}-${type}-${model}-${market}`,
+                        title: `${year} - ${type} - ${model} (${market})`,
+                        typeDisplay: 'مواصفات',
+                        tabId: 'specs-tab',
+                        data: { year, type, model, market }
+                    };
+                    
+                    resultData = { 
+                        type: 'specs',
+                        title: `${type} ${model} ${year}`,
+                        id: `specs-res-${Date.now()}`
+                    };
+
+                } else if (currentSearchMode === 'vin') {
+                    const vin = vinInput.value.toUpperCase();
+                    
+                    if (!vin || !VIN_REGEX.test(vin)) {
+                        throw new Error("الرجاء إدخال رقم VIN صحيح (17 رمزاً، بدون الأحرف I, O, Q).");
+                    }
+                    
+                    userQuery = createVinQuery(vin); 
+                    systemInstruction = createVinSystemInstruction(); 
+                    displayTitle = { make: 'VIN', model: vin, year: '' }; 
+                    
+                    searchData = {
+                        mode: 'vin',
+                        id: `vin-${vin}`,
+                        title: `VIN: ${vin}`,
+                        typeDisplay: 'VIN',
+                        tabId: 'vin-tab',
+                        data: { vin }
+                    };
+                    
+                    resultData = { 
+                        type: 'vin', 
+                        title: `VIN: ${vin}`,
+                        id: `vin-res-${vin}`
+                    };
+
+                } else if (currentSearchMode === 'reverse') {
+                    const fccId = document.getElementById('fcc_input').value.toUpperCase();
+                    const partNumber = document.getElementById('pn_input').value.toUpperCase();
+
+                    if (!fccId && !partNumber) {
+                        throw new Error("الرجاء إدخال FCC ID أو Part Number للبحث العكسي.");
+                    }
+                    
+                    userQuery = createReverseQuery(fccId, partNumber);
+                    systemInstruction = createReverseSystemInstruction();
+                    displayTitle = { fccId: fccId, partNumber: partNumber };
+                    
+                    searchData = {
+                        mode: 'reverse',
+                        id: `reverse-${fccId}-${partNumber}`,
+                        title: `${fccId || ''} / ${partNumber || ''}`,
+                        typeDisplay: 'عكسي',
+                        tabId: 'reverse-tab',
+                        data: { fccId, partNumber }
+                    };
+                    
+                    resultData = { 
+                        type: 'reverse',
+                        title: `${fccId || ''} / ${partNumber || ''}`,
+                        id: `reverse-res-${fccId}-${partNumber}`
+                    };
+                }
+                
+                let rawText;
+                try {
+                    console.log("Attempting search with Gemini...");
+                    rawText = await callGeminiAPI(userQuery, systemInstruction);
+                } catch (geminiError) {
+                    console.warn("Gemini API failed:", geminiError.message);
+                    showMessage("فشل الخادم الأول. جارٍ المحاولة بالخادم الاحتياطي...", 'info');
+                    
+                    try {
+                        console.log("Attempting search with DeepSeek...");
+                        rawText = await callDeepSeekAPI(userQuery, systemInstruction); 
+                    } catch (deepSeekError) {
+                        console.error("DeepSeek API failed:", deepSeekError.message);
+                        throw new Error("فشل الاتصال بكلا الخادمين. الرجاء المحاولة لاحقاً.");
+                    }
+                }
+                
+                saveToHistory(searchData);
+                
+                resultData.rawText = rawText; 
+                
+                let resultsFound = false;
+                if (currentSearchMode === 'specs' || currentSearchMode === 'vin') {
+                    resultsFound = displaySpecsResults(rawText, displayTitle, resultData);
+                } else if (currentSearchMode === 'reverse') {
+                    resultsFound = displayReverseResults(rawText, displayTitle, resultData);
+                }
+                
+                if (!resultsFound) {
+                    showEmptyState();
+                } else {
+                    showMessage('تم العثور على نتائج بنجاح!', 'success');
+                }
+
+            } catch (error) {
+                console.error("Submit Error:", error);
+                showMessage(error.message || 'حدث خطأ غير متوقع. الرجاء المحاولة مرة أخرى.', 'error');
+            } finally {
+                loader.classList.add('hidden');
+                progressText.style.display = 'block';
+                if (searchIcon) searchIcon.style.display = 'block'; 
+                submitButton.disabled = false;
+            }
+        });
+        
+        clearFormBtn.addEventListener('click', function() {
+            const activePanel = document.querySelector('.search-panel.active');
+            if (activePanel) {
+                activePanel.querySelectorAll('input, select').forEach(el => {
+                    if (el.tagName === 'SELECT') {
+                        el.selectedIndex = 0;
+                    } else {
+                        el.value = '';
+                    }
+                });
+            }
+            if (currentSearchMode === 'vin') {
+                updateVinCounter(0);
+            }
+            
+            messageBox.style.display = 'none';
+            resultBox.innerHTML = '';
+            resultsTitle.style.display = 'none';
+        });
+
+        function createSpecsQuery(year, type, model, market) {
+            return `ابحث عن بيانات الريموت لسيارة:
+- الماركة: ${type}
+- الطراز: ${model}
+- السنة: ${year}
+- السوق: ${market}
+ابحث عن FCC ID و Part Number ونوع الريموت ونوع نصل المفتاح (مثل TOY48 أو KK12).
+ابحث أيضًا عن 2-3 احتمالات أو بدائل شائعة إذا كانت متوفرة.
+---
+${getSpecsFormatInstruction()}`;
+        }
+        
+        function createVinQuery(vin) {
+            return `مهم للغاية: لديك مهمتان متسلسلسان.
+المهمة 1 (التحقق أولاً): خذ رقم VIN التالي: ${vin}. ابحث في Google ومواقع فك تشفير VIN (مثل partsouq.com أو carfax.com أو أي VIN decoder) لتحديد **بدقة** ما هي "الماركة" و "الطراز" و "السنة" الحقيقية. قم بمطابقة النتائج من أكثر من موقع. لا تفترض، بل تحقق.
+المهمة 2 (البحث ثانياً): *فقط بعد أن تتحقق من معلومات السيارة من المهمة 1*، استخدم هذه المعلومات (الماركة، الطراز، السنة) للبحث عن بيانات الريموت الخاصة بها.
+ابحث عن: FCC ID, Part Number, نوع الريموت, نصل المفتاح.
+وابحث عن 2-3 بدائل.
+---
+${getVinFormatInstruction()}`;
+        }
+        
+        function createReverseQuery(fccId, partNumber) {
+            return `ابحث عن السيارات المتوافقة مع:
+- FCC ID: ${fccId || 'N/A'}
+- Part Number: ${partNumber || 'N/A'}
+اذكر 5-7 سيارات متوافقة، مع ذكر الطراز، سنوات التصنيع، وأي ملاحظات هامة.
+---
+الرجاء تنسيق الرد **فقط** بالشكل التالي (لا تضف أي نص إضافي):
+CAR_1_MODEL: [الطراز 1]
+CAR_1_YEARS: [سنوات التصنيع 1]
+CAR_1_NOTES: [ملاحظات 1 أو "N/A"]
+...
+CAR_7_MODEL: [الطراز 7]
+CAR_7_YEARS: [سنوات التصنيع 7]
+CAR_7_NOTES: [ملاحظات 7 أو "N/A"]
+`;
+        }
+        
+        function getSpecsFormatInstruction() {
+            return `الرجاء تنسيق الرد **فقط** بالشكل التالي (لا تضف أي نص إضافي، استخدم "غير متوفر" أو "N/A" إذا لم تُعثر على بيانات):
+FCC_ID: [البيانات أو "غير متوفر"]
+PART_NUMBER: [البيانات أو "غير متوفر"]
+REMOTE_TYPE: [البيانات أو "غير متوفر"]
+KEY_BLADE: [البيانات أو "غير متوفر"]
+ALT_1_FCC: [بيانات البديل 1 أو "N/A"]
+ALT_1_PN: [بيانات البديل 1 أو "N/A"]
+ALT_1_NOTES: [ملاحظات 1 أو "N/A"]
+ALT_2_FCC: [بيانات البديل 2 أو "N/A"]
+ALT_2_PN: [بيانات البديل 2 أو "N/A"]
+ALT_2_NOTES: [ملاحظات 2 أو "N/A"]
+ALT_3_FCC: [بيانات البديل 3 أو "N/A"]
+ALT_3_PN: [بيانات البديل 3 أو "N/A"]
+ALT_3_NOTES: [ملاحظات 3 أو "N/A"]`;
+        }
+
+        function getVinFormatInstruction() {
+            return `الرجاء تنسيق الرد **فقط** بالشكل التالي (لا تضف أي نص إضافي، استخدم "غير متوفر" أو "N/A" إذا لم تُعثر على بيانات):
+MAKE: [الماركة التي وجدتها]
+MODEL: [الطراز الذي وجدته]
+YEAR: [السنة التي وجدتها]
+FCC_ID: [البيانات أو "غير متوفر"]
+PART_NUMBER: [البيانات أو "غير متوفر"]
+REMOTE_TYPE: [البيانات أو "غير متوفر"]
+KEY_BLADE: [البيانات أو "غير متوفر"]
+ALT_1_FCC: [بيانات البديل 1 أو "N/A"]
+ALT_1_PN: [بيانات البديل 1 أو "N/A"]
+ALT_1_NOTES: [ملاحظات 1 أو "N/A"]
+ALT_2_FCC: [بيانات البديل 2 أو "N/A"]
+ALT_2_PN: [بيانات البديل 2 أو "N/A"]
+ALT_2_NOTES: [ملاحظات 2 أو "N/A"]
+ALT_3_FCC: [بيانات البديل 3 أو "N/A"]
+ALT_3_PN: [بيانات البديل 3 أو "N/A"]
+ALT_3_NOTES: [ملاحظات 3 أو "N/A"]`;
+        }
+
+        function createSpecsSystemInstruction() {
+            return {
+                parts: [{ text: "أنت مساعد خبير في قطع غيار السيارات، متخصص في ريموتات المفاتيح. ابحث عن المعلومات المطلوبة بدقة والتزم **تماماً** بالتنسيق المطلوب في نهاية طلب المستخدم. لا تضف أي مقدمات أو خواتيم. يجب أن تكون جميع القيم باللغة العربية باستثناء FCC ID و Part Number و Key Blade." }]
+            };
+        }
+        function createReverseSystemInstruction() {
+             return {
+                parts: [{ text: "أنت مساعد خبير في قطع غيار السيارات. ابحث عن السيارات المتوافقة والتزم **تماماً** بالتنسيق المطلوب (CAR_1_MODEL, CAR_1_YEARS...). لا تضف أي مقدمات أو خواتيم." }]
+            };
+        }
+        
+        function createVinSystemInstruction() {
+            return {
+                parts: [{ text: "أنت مساعد خبير في قطع غيار السيارات. مهمتك الأولى هي فك تشفير VIN للعثور على الماركة والطراز والسنة. مهمتك الثانية هي العثور على معلومات الريموت لتلك السيارة. التزم **تماماً** بالتنسيق المطلوب (MAKE, MODEL, YEAR, FCC_ID...). لا تضف أي مقدمات أو خواتيم." }]
+            };
+        }
+        
+        async function callGeminiAPI(userQuery, systemInstruction) {
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${GEMINI_API_KEY}`;
+
+            const payload = {
+                contents: [{ parts: [{ text: userQuery }] }],
+                systemInstruction: systemInstruction,
+                tools: [{ "google_search": {} }]
+            };
+            
+            const response = await fetchWithRetry(apiUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            const rawText = response.candidates?.[0]?.content?.parts?.[0]?.text;
+            if (!rawText || rawText.trim() === '') {
+                throw new Error("لم يتم العثور على معلومات مفيدة من الـ API.");
+            }
+            return rawText;
+        }
+
+        async function callDeepSeekAPI(userQuery, systemInstruction) {
+            const apiKey = DEEPSEEK_API_KEY; 
+            const apiUrl = `https://api.deepseek.com/chat/completions`;
+
+            console.warn("Calling DeepSeek. Note: Google Search grounding is not available for this API. Results may vary.");
+
+            const payload = {
+                model: "deepseek-chat",
+                messages: [
+                    { "role": "system", "content": systemInstruction.parts[0].text },
+                    { "role": "user", "content": userQuery }
+                ]
+            };
+
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${apiKey}`
+                },
+                body: JSON.stringify(payload)
+            };
+
+            let delay = 1000;
+            for (let i = 0; i < 3; i++) {
+                try {
+                    const response = await fetch(apiUrl, options);
+                    if (response.ok) {
+                        const data = await response.json();
+                        const rawText = data.choices?.[0]?.message?.content;
+                        if (!rawText || rawText.trim() === '') {
+                            throw new Error("لم يتم العثور على معلومات مفيدة من DeepSeek API.");
+                        }
+                        return rawText;
+                    }
+                    if (response.status === 429 || response.status >= 500) {
+                        await new Promise(res => setTimeout(res, delay));
+                        delay *= 2;
+                    } else {
+                        const errorData = await response.json();
+                        throw new Error(`DeepSeek Client Error: ${response.status} - ${errorData.error?.message || 'Unknown error'}`);
+                    }
+                } catch (error) {
+                    if (i === 2) throw error;
+                    await new Promise(res => setTimeout(res, delay));
+                    delay *= 2;
+                }
+            }
+            throw new Error("فشل الاتصال بـ DeepSeek API بعد عدة محاولات.");
+        }
+
+
+        function extract(rawText, key) {
+            const regex = new RegExp(`^${key}: (.*)`, "im"); 
+            const match = rawText.match(regex);
+            return match && match[1] ? match[1].trim() : "غير متوفر";
+        }
+        
+        function showEmptyState() {
+            resultsTitle.style.display = 'none';
+            const template = document.getElementById('empty-state-template');
+            const clone = template.content.cloneNode(true);
+            resultBox.appendChild(clone);
+        }
+            
+        function displaySpecsResults(rawText, title, resultData) {
+            resultBox.innerHTML = ''; 
+
+            const fccId = extract(rawText, "FCC_ID");
+            const partNumber = extract(rawText, "PART_NUMBER");
+            
+            if ((fccId === "غير متوفر" || fccId === "N/A") && (partNumber === "غير متوفر" || partNumber === "N/A")) {
+                return false; 
+            }
+            
+            resultsTitle.style.display = 'flex'; 
+            const remoteType = extract(rawText, "REMOTE_TYPE");
+            const keyBlade = extract(rawText, "KEY_BLADE");
+            
+            let headerTitle = '';
+            
+            if (resultData.type === 'vin') {
+                const apiMake = extract(rawText, "MAKE");
+                const apiModel = extract(rawText, "MODEL");
+                const apiYear = extract(rawText, "YEAR");
+                
+                if (apiMake !== "غير متوفر" && apiMake !== "N/A" && apiModel !== "غير متوفر" && apiModel !== "N/A") {
+                    headerTitle = `${apiMake} ${apiModel} ${apiYear || ''}`;
+                    resultData.title = headerTitle; 
+                } else {
+                    headerTitle = `نتائج للـ VIN: ${title.model}`;
+                }
+            } else {
+                headerTitle = `${title.make} ${title.model} ${title.year}`;
+            }
+
+            resultData.fccId = fccId;
+            resultData.partNumber = partNumber;
+            resultData.keyBlade = keyBlade;
+            resultData.remoteType = remoteType;
+            
+            const copyIconSvgPath = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>`;
+
+            const mainResultsHtml = `
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <h3 class="font-bold text-lg text-white flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-gold">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 0 1 3 3m3 0a6 6 0 0 1-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v-2.25l5.227-5.227c.404-.404.527-1 .43-1.563A6 6 0 1 1 21.75 8.25Z" />
+                        </svg>
+                        <span>${headerTitle}</span>
+                    </h3>
+                    
+                    <div class="accordion-actions">
+                        <button class="action-btn" title="مشاركة النتيجة" onclick="shareResult(${JSON.stringify(resultData).replace(/"/g, "'")})">
+                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.19.02.38.05.57.09m0 0c2.083.36 3.997.96 5.681 1.94m0 0c.16.1.31.2.46.3m0 0a2.25 2.25 0 1 0 0-2.186m0 2.186c-.19-.02-.38-.05-.57-.09m0 0c-2.083-.36-3.997-.96-5.681-1.94m0 0c-.16-.1-.31-.2-.46-.3m0 0a2.25 2.25 0 1 0 0 2.186m0-2.186-.57.09" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <svg class="accordion-icon w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <div class="accordion-content">
+                    <div class="p-4 border border-gray-700 rounded-lg overflow-x-auto">
+                        <table class="results-table">
+                            <tbody>
+                                <tr>
+                                    <td class="font-semibold text-gold pr-4 py-2 w-1/3">FCC ID:</td>
+                                    <td class="latin-font py-2 flex justify-between items-center">
+                                        <span>${fccId}</span>
+                                        ${(fccId !== 'غير متوفر' && fccId !== 'N/A') ? `<svg onclick="copyToClipboard(this.previousElementSibling.textContent, this)" title="نسخ FCC ID" class="copy-btn w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">${copyIconSvgPath}</svg>` : ''}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold text-gold pr-4 py-2">Part Number:</td>
+                                    <td class="latin-font py-2 flex justify-between items-center">
+                                        <span>${partNumber}</span>
+                                        ${(partNumber !== 'غير متوفر' && partNumber !== 'N/A') ? `<svg onclick="copyToClipboard(this.previousElementSibling.textContent, this)" title="نسخ Part Number" class="copy-btn w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">${copyIconSvgPath}</svg>` : ''}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold text-gold pr-4 py-2">نوع الريموت:</td>
+                                    <td class="py-2">${remoteType}</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold text-gold pr-4 py-2">نصل المفتاح:</td>
+                                    <td class="latin-font py-2 flex justify-between items-center">
+                                        <span>${keyBlade}</span>
+                                        ${(keyBlade !== 'غير متوفر' && keyBlade !== 'N/A') ? `<svg onclick="copyToClipboard(this.previousElementSibling.textContent, this)" title="نسخ نصل المفتاح" class="copy-btn w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">${copyIconSvgPath}</svg>` : ''}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            `;
+            resultBox.innerHTML += mainResultsHtml;
+
+            let alternatives = [];
+            for (let i = 1; i <= 3; i++) {
+                const altFcc = extract(rawText, `ALT_${i}_FCC`);
+                const altPn = extract(rawText, `ALT_${i}_PN`);
+                const altNotes = extract(rawText, `ALT_${i}_NOTES`);
+                
+                if ((altFcc !== "غير متوفر" && altFcc !== "N/A") || (altPn !== "غير متوفر" && altPn !== "N/A")) {
+                    alternatives.push({
+                        fccId: (altFcc && altFcc !== "غير متوفر" && altFcc !== "N/A") ? altFcc : "N/A",
+                        partNumber: (altPn && altPn !== "غير متوفر" && altPn !== "N/A") ? altPn : "N/A",
+                        notes: (altNotes && altNotes !== "غير متوفر" && altNotes !== "N/A") ? altNotes : "لا توجد ملاحظات."
+                    });
+                }
+            }
+
+            if (alternatives.length > 0) {
+                let alternativesHtml = alternatives.map(alt => `
+                    <div class="alternative-card space-y-2 mb-3">
+                        <div class="flex justify-between items-center">
+                            <strong class="text-gray-400">FCC ID:</strong>
+                            <span class="latin-font">${alt.fccId}</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <strong class="text-gray-400">Part Number:</strong>
+                            <span class="latin-font">${alt.partNumber}</span>
+                        </div>
+                        <div>
+                            <strong class="text-gray-400">ملاحظات:</strong>
+                            <p class="text-sm text-gray-300 leading-relaxed mt-1">${alt.notes}</p>
+                        </div>
+                    </div>
+                `).join('');
+
+                const altSectionHtml = `
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h3 class="font-bold text-lg text-white flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25 12 21m0 0-3.75-3.75M12 21V3" />
+                            </svg>
+                            <span>احتمالات أخرى مطابقة (${alternatives.length})</span>
+                        </h3>
+                        <svg class="accordion-icon w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="p-4 border border-gray-700 rounded-lg scrollable-card-container">
+                            ${alternativesHtml}
+                        </div>
+                    </div>
+                `;
+                resultBox.innerHTML += altSectionHtml;
+            } else {
+                 resultBox.innerHTML += `
+                    <p class="text-gray-400 text-center py-4">لا توجد بدائل شائعة مسجلة لهذه المواصفات.</p>
+                `;
+            }
+            
+            const firstAccordion = resultBox.querySelector('.accordion-header');
+            if(firstAccordion) {
+                firstAccordion.click();
+            }
+            
+            return true;
+        }
+        
+        function displayReverseResults(rawText, title, resultData) {
+            resultBox.innerHTML = '';
+            
+            let cars = [];
+            for (let i = 1; i <= 7; i++) {
+                const model = extract(rawText, `CAR_${i}_MODEL`);
+                const years = extract(rawText, `CAR_${i}_YEARS`);
+                const notes = extract(rawText, `CAR_${i}_NOTES`);
+                
+                if (model !== "غير متوفر" && model !== "N/A") {
+                    cars.push({ model, years, notes });
+                }
+            }
+            
+            if (cars.length === 0) {
+                return false; 
+            }
+            
+            resultsTitle.style.display = 'flex'; 
+            let titleText = title.fccId ? `FCC ID: ${title.fccId}` : `P/N: ${title.partNumber}`;
+            if (title.fccId && title.partNumber) {
+                titleText = `FCC ID: ${title.fccId} | P/N: ${title.partNumber}`;
+            }
+            
+            resultData.cars = cars;
+            
+            let carsHtml = cars.map(car => `
+                <div class="alternative-card space-y-2 mb-3">
+                    <div class="flex justify-between items-center">
+                        <strong class="text-gray-400">الطراز:</strong>
+                        <span class="font-semibold">${car.model}</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <strong class="text-gray-400">السنوات:</strong>
+                        <span class="latin-font">${car.years}</span>
+                    </div>
+                    <div>
+                        <strong class="text-gray-400">ملاحظات:</strong>
+                        <p class="text-sm text-gray-300 leading-relaxed mt-1">${car.notes}</p>
+                    </div>
+                </div>
+            `).join('');
+            
+            const mainResultsHtml = `
+                <div class="accordion-header active" onclick="toggleAccordion(this)">
+                    <h3 class="font-bold text-lg text-white flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-gold">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.125-.504 1.125-1.125V14.25m-17.25 4.5h16.5m-16.5 0T3.375 14.25m16.5 4.5c0 .621-.504 1.125-1.125 1.125h-1.5c-.621 0-1.125-.504-1.125-1.125v-1.5c0-.621.504-1.125 1.125-1.125H21v-1.5m-16.5 4.5c0 .621.504 1.125 1.125 1.125h1.5c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375v1.5M9 13.5l3 3m0 0l3-3m-3 3v-6m0 1.5H7.5m3-1.5h1.5m4.5 1.5H15" />
+                        </svg>
+                        <span>السيارات المتوافقة (${titleText})</span>
+                    </h3>
+                    
+                    <div class="accordion-actions">
+                        <button class="action-btn" title="مشاركة النتيجة" onclick="shareResult(${JSON.stringify(resultData).replace(/"/g, "'")})">
+                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.19.02.38.05.57.09m0 0c2.083.36 3.997.96 5.681 1.94m0 0c.16.1.31.2.46.3m0 0a2.25 2.25 0 1 0 0-2.186m0 2.186c-.19-.02-.38-.05-.57-.09m0 0c-2.083-.36-3.997-.96-5.681-1.94m0 0c-.16-.1-.31-.2-.46-.3m0 0a2.25 2.25 0 1 0 0 2.186m0-2.186-.57.09" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <svg class="accordion-icon w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <div class="accordion-content active">
+                    <div class="p-4 border border-gray-700 rounded-lg scrollable-card-container">
+                        ${carsHtml}
+                    </div>
+                </div>
+            `;
+            resultBox.innerHTML = mainResultsHtml;
+            return true;
+        }
+        
+        function copyToClipboard(text, iconElement) {
+           if (!text || text === 'غير متوفر' || text === 'N/A') return;
+           
+           const originalPath = iconElement.innerHTML;
+           const checkMarkPath = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>';
+
+           const showFeedback = () => {
+               showMessage('تم النسخ: ' + text, 'info');
+               iconElement.innerHTML = checkMarkPath;
+               iconElement.classList.add('copied');
+               
+               setTimeout(() => {
+                   iconElement.innerHTML = originalPath;
+                   iconElement.classList.remove('copied');
+               }, 2000);
+           };
+
+           if (navigator.clipboard && navigator.clipboard.writeText) {
+               navigator.clipboard.writeText(text).then(showFeedback).catch(err => {
+                   console.error('Failed to copy with Clipboard API: ', err);
+                   fallbackCopyText(text, showFeedback);
+               });
+           } else {
+               fallbackCopyText(text, showFeedback);
+           }
+        }
+
+        function fallbackCopyText(text, successCallback) {
+           const el = document.createElement('textarea');
+           el.value = text;
+           el.style.position = 'absolute';
+           el.style.left = '-9999px';
+           document.body.appendChild(el);
+           el.select();
+           try {
+             document.execCommand('copy');
+             successCallback();
+           } catch (err) {
+             console.error('Failed to copy text: ', err);
+             showMessage('فشل النسخ', 'error');
+           }
+           document.body.removeChild(el);
+        }
+
+        function toggleAccordion(header) {
+            if (event.target.closest('.action-btn')) {
+                event.stopPropagation();
+                return;
+            }
+            header.classList.toggle('active');
+            const content = header.nextElementSibling;
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+            } else {
+                content.classList.add('active');
+            }
+        }
+
+        function showMessage(message, type) {
+            messageBox.textContent = message;
+            messageBox.style.display = 'block';
+            
+            if (type === 'success') {
+                messageBox.style.backgroundColor = 'var(--success-color)';
+            } else if (type === 'error') {
+                messageBox.style.backgroundColor = 'var(--error-color)';
+            } else if (type === 'info') {
+                messageBox.style.backgroundColor = 'var(--info-color)';
+            }
+            messageBox.style.color = 'white';
+            
+            const duration = Math.max(3000, message.length * 100); 
+            setTimeout(() => {
+                messageBox.style.display = 'none';
+            }, duration);
+        }
+
+        async function fetchWithRetry(url, options, maxRetries = 3, initialDelay = 1000) {
+            let delay = initialDelay;
+            for (let i = 0; i < maxRetries; i++) {
+                try {
+                    const response = await fetch(url, options);
+                    if (response.ok) {
+                        return response.json();
+                    }
+                    if (response.status === 429 || response.status >= 500) {
+                        await new Promise(res => setTimeout(res, delay));
+                        delay *= 2; 
+                    } else {
+                        const errorData = await response.json();
+                        throw new Error(`Client Error: ${response.status} - ${errorData.error.message || 'Unknown error'}`);
+                    }
+                } catch (error) {
+                    if (i === maxRetries - 1) throw error;
+                    await new Promise(res => setTimeout(res, delay));
+                    delay *= 2;
+                }
+            }
+            throw new Error("فشل الاتصال بالـ API بعد عدة محاولات.");
+        }
+        
+        async function fetchCSV(url) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch CSV: ${response.statusText}`);
+                }
+                const text = await response.text();
+                return text.split('\n')
+                           .map(item => item.trim())
+                           .filter(item => item.length > 0);
+            } catch (error) {
+                console.error(`Error loading CSV from ${url}:`, error);
+                return [];
+            }
+        }
+        
+        function showSuggestions(value, list, container, inputElement) {
+            container.innerHTML = '';
+            if (value.length === 0) {
+                container.style.display = 'none';
+                return;
+            }
+            const filtered = list.filter(item => 
+                item.toLowerCase().startsWith(value.toLowerCase())
+            );
+            if (filtered.length > 0) {
+                filtered.forEach(item => {
+                    const div = document.createElement('div');
+                    div.className = 'suggestion-item';
+                    div.textContent = item;
+                    div.addEventListener('click', () => {
+                        inputElement.value = item;
+                        container.style.display = 'none';
+                    });
+                    container.appendChild(div);
+                });
+                container.style.display = 'block';
+            } else {
+                container.style.display = 'none';
+            }
+        }
+        
+        function loadHistory() {
+            const history = JSON.parse(localStorage.getItem('searchHistory') || '[]');
+            historyBox.innerHTML = '';
+            if (history.length > 0) {
+                historyContainer.style.display = 'block';
+                history.forEach(item => {
+                    const div = document.createElement('div');
+                    div.className = 'history-item';
+                    div.innerHTML = `
+                        <span class="latin-font">${item.title}</span>
+                        <span class="history-type">${item.typeDisplay}</span>
+                    `;
+                    div.onclick = () => {
+                        populateFormFromHistory(item);
+                        form.requestSubmit(); 
+                    };
+                    historyBox.appendChild(div);
+                });
+            } else {
+                historyContainer.style.display = 'none';
+            }
+        }
+
+        function saveToHistory(searchData) {
+            let history = JSON.parse(localStorage.getItem('searchHistory') || '[]');
+            history = history.filter(item => item.id !== searchData.id);
+            history.unshift(searchData);
+            if (history.length > MAX_HISTORY) {
+                history = history.slice(0, MAX_HISTORY);
+            }
+            localStorage.setItem('searchHistory', JSON.stringify(history));
+            loadHistory();
+        }
+
+        function populateFormFromHistory(item) {
+            document.getElementById(item.tabId).click();
+            
+            if (item.mode === 'specs') {
+                document.getElementById('year').value = item.data.year;
+                typeInput.value = item.data.type;
+                modelInput.value = item.data.model;
+                document.getElementById('market').value = item.data.market;
+            } else if (item.mode === 'reverse') {
+                document.getElementById('fcc_input').value = item.data.fccId;
+                document.getElementById('pn_input').value = item.data.partNumber;
+            } else if (item.mode === 'vin') {
+                vinInput.value = item.data.vin;
+                updateVinCounter(item.data.vin.length);
+            }
+        }
+        
+        async function shareResult(resultData) {
+            let text = `*نتائج بحث MASTER KEY*\n\n`;
+            text += `*البحث:* ${resultData.title}\n`;
+            
+            let typeDisplay = 'مواصفات';
+            if (resultData.type === 'reverse') typeDisplay = 'بحث عكسي';
+            if (resultData.type === 'vin') typeDisplay = 'بحث VIN';
+            
+            text += `*النوع:* ${typeDisplay}\n\n`;
+
+            if (resultData.type === 'specs' || resultData.type === 'vin') {
+                text += `*FCC ID:* ${resultData.fccId || 'N/A'}\n`;
+                text += `*Part Number:* ${resultData.partNumber || 'N/A'}\n`;
+                text += `*نصل المفتاح:* ${resultData.keyBlade || 'N/A'}\n`;
+                text += `*نوع الريموت:* ${resultData.remoteType || 'N/A'}\n`;
+            } else if (resultData.type === 'reverse' && resultData.cars) {
+                text += "*السيارات المتوافقة:*\n";
+                resultData.cars.forEach((car, index) => {
+                    text += `${index + 1}. ${car.model} (${car.years})\n`;
+                });
+            }
+
+            try {
+                if (navigator.share) {
+                    await navigator.share({
+                        title: 'نتائج بحث MASTER KEY',
+                        text: text,
+                    });
+                } else {
+                    throw new Error('Web Share API not supported');
+                }
+            } catch (err) {
+                fallbackCopyText(text, () => {
+                     showMessage('تم نسخ ملخص النتيجة للحافظة', 'info');
+                });
+            }
+        }
+
+        function updateVinCounter(length) {
+            vinCounter.textContent = `(${length}/17)`;
+            if (length === 17 && VIN_REGEX.test(vinInput.value)) {
+                vinCounter.classList.add('valid');
+            } else {
+                vinCounter.classList.remove('valid');
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', async () => {
+            
+            const CORRECT_PIN = "1420";
+            const securityOverlay = document.getElementById('security-overlay');
+            const securityModal = document.getElementById('security-modal');
+            const pinInputs = document.querySelectorAll('#pin-container input');
+            const loginBtn = document.getElementById('login-btn');
+            const pinError = document.getElementById('pin-error');
+            const mainBody = document.querySelector('body'); 
+
+            pinInputs.forEach((input, index) => {
+                input.addEventListener('input', (e) => {
+                    if (input.value && index < pinInputs.length - 1) {
+                        pinInputs[index + 1].focus();
+                    }
+                });
+
+                input.addEventListener('keydown', (e) => {
+                    if (e.key === 'Backspace' && !input.value && index > 0) {
+                        pinInputs[index - 1].focus();
+                    }
+                    if (e.key === 'Enter' && index === pinInputs.length - 1) {
+                        loginBtn.click();
+                    }
+                });
+            });
+
+            pinInputs[0].addEventListener('paste', (e) => {
+                e.preventDefault();
+                const pasteData = (e.clipboardData || window.clipboardData).getData('text');
+                if (pasteData && pasteData.length === 4 && /^[0-9]+$/.test(pasteData)) {
+                    pinInputs.forEach((input, index) => {
+                        input.value = pasteData[index];
+                    });
+                    pinInputs[3].focus();
+                }
+            });
+
+            loginBtn.addEventListener('click', () => {
+                const pin = Array.from(pinInputs).map(input => input.value).join('');
+                
+                if (pin === CORRECT_PIN) {
+                    securityModal.style.display = 'none';
+                    securityOverlay.style.display = 'none';
+                    mainBody.style.overflow = 'auto'; 
+                } else {
+                    pinError.style.display = 'block';
+                    pinInputs[0].focus(); 
+                    pinInputs[0].select(); 
+                    setTimeout(() => {
+                        window.location.href = 'https://www.google.com'; // إعادة التوجيه عند الخطأ
+                    }, 1000); 
+                }
+            });
+
+            pinInputs[0].focus();
+            
+            const syncBtn = document.getElementById('sync-btn');
+            if (syncBtn) {
+                syncBtn.addEventListener('click', async () => {
+                    const tempMsg = document.createElement('div');
+                    tempMsg.textContent = 'جارٍ حذف الكاش وتحديث التطبيق...';
+                    tempMsg.style.cssText = `
+                        position: fixed;
+                        top: 20px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        background-color: var(--info-color);
+                        color: white;
+                        padding: 1rem 1.5rem;
+                        border-radius: 0.5rem;
+                        z-index: 10001; 
+                        font-family: 'Cairo', sans-serif;
+                        font-weight: 600;
+                        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+                    `;
+                    document.body.appendChild(tempMsg);
+                    
+                    try {
+                        if ('serviceWorker' in navigator) {
+                            const registrations = await navigator.serviceWorker.getRegistrations();
+                            if (registrations.length > 0) {
+                                for (let registration of registrations) {
+                                    await registration.unregister();
+                                }
+                                console.log('Service Workers القديمة تم إلغاء تسجيلها.');
+                            } else {
+                                console.log('لا يوجد Service Workers لإلغاء تسجيلها.');
+                            }
+                        }
+                        
+                        if (window.caches) {
+                            const cacheNames = await window.caches.keys();
+                            await Promise.all(cacheNames.map(cacheName => {
+                                console.log('Deleting cache:', cacheName);
+                                return window.caches.delete(cacheName);
+                            }));
+                            console.log('تم مسح الكاش بنجاح.');
+                        } else {
+                            console.log('API الكاش غير مدعوم.');
+                        }
+
+                        setTimeout(() => {
+                            window.location.reload(true); 
+                        }, 1500); 
+
+                    } catch (error) {
+                        console.error('فشل في حذف الكاش:', error);
+                        tempMsg.textContent = 'حدث خطأ. حاول إعادة تحميل الصفحة يدوياً.';
+                        tempMsg.style.backgroundColor = 'var(--error-color)';
+                        
+                        setTimeout(() => {
+                            window.location.reload(true);
+                        }, 1500);
+                    }
+                });
+            }
+
+            carMakes = await fetchCSV(carMakesUrl);
+            carModels = await fetchCSV(carModelsUrl);
+            
+            loadHistory();
+            
+            clearHistoryBtn.addEventListener('click', () => {
+                localStorage.removeItem('searchHistory');
+                loadHistory();
+            });
+            
+            vinInput.addEventListener('input', (e) => {
+                const vin = e.target.value.toUpperCase();
+                e.target.value = vin; 
+                updateVinCounter(vin.length);
+            });
+            
+            typeInput.addEventListener('input', () => {
+                showSuggestions(typeInput.value, carMakes, typeSuggestions, typeInput);
+            });
+            
+            modelInput.addEventListener('input', () => {
+                showSuggestions(modelInput.value, carModels, modelSuggestions, modelInput);
+            });
+            
+            document.addEventListener('click', (e) => {
+                if (!typeInput.contains(e.target) && !typeSuggestions.contains(e.target)) {
+                    typeSuggestions.style.display = 'none';
+                }
+                if (!modelInput.contains(e.target) && !modelSuggestions.contains(e.target)) {
+                    modelSuggestions.style.display = 'none';
+                }
+            });
+        });
+
+    </script>
+
+</body>
+</html>
