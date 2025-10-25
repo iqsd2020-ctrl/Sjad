@@ -894,7 +894,7 @@ function updateVinCounter(length) {
 
 document.addEventListener('DOMContentLoaded', async () => {
     
-    const CORRECT_PIN = "2025";
+    const CORRECT_PIN = "1420";
     const securityOverlay = document.getElementById('security-overlay');
     const securityModal = document.getElementById('security-modal');
     const pinInputs = document.querySelectorAll('#pin-container input');
