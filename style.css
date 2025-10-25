@@ -32,6 +32,10 @@ body {
     color: var(--primary-color);
 }
 
+.border-gold {
+    border-color: var(--primary-color);
+}
+
 .card-container {
     background-color: var(--bg-light);
     border-radius: 1rem;
@@ -235,7 +239,7 @@ select.app-input.with-icon {
     margin-bottom: 0.5rem;
 }
 .accordion-content.active {
-    max-height: 800px;
+    max-height: 800px; /* إرجاع الارتفاع الأصلي */
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
@@ -576,3 +580,5 @@ select.app-input.with-icon {
  #contact-us-btn:hover span { /* تغيير لون النص عند المرور */
      color: var(--metal-hover-text);
  }
+ 
+/* -- (تم حذف أنماط الصورة) -- */

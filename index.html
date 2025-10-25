@@ -11,19 +11,24 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#FFD700">
 
-    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI0ZGRDcwMCIgY2xhc3M9IndpZHRoLTYgaGVpZHRoLTYiPgogIDxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTIzIDIuMjVjMCAuNDE0LS4zMzYuNzUtLjc1Ljc1SDMuNzVjLS40MTQgMC0uNzUtLjMzNi0uNzUtLjc1VjEuNWMwLS40MTQuMzM2LS43NS43NS0uNzVoMTguNWMuNDE0IDAgLjc1LjMzNi43NS43NXYuNzVaTTE5LjUgNmEuNzUuNzUgMCAwIDAtLjc1Ljc1djExLjg5N0EzLjM3MiAzLjM3MiAwIDAgMCAxNi4xMjUgMjFhMy4zNzIgMy4zNzIgMCAwIDAtMi42MjUtMS4zNTNIMTAuMTI1Yy0uNDc3IDAtLjkzLS4xMTktMS4zMi0uMzMxQTQuNDgwIDQuNDgwIDAgMCAxIDUuMjUgMTQuODk2VjYuNzVhLjc1Ljc1IDAgMCAwLTEuNSAwVjE1LjEyYzAgMS43MjIgMS4xNzIgMy4yMSA1LjM3MyAzLjg3MWEzLjM3NSAzLjM3NSAwIDEgMCA0Ljc1NCAwYzQuMjAxLS42NjEgNS4zNzMtMi4xNDkgNS4zNzMtMy44NzFWNi43NUEuNzUuNzUgMCAwIDAgMTkuNSA2WiBtLTMuMzc1IDEyLjU2M2EyLjEyNSAyLjEyNSAwIDEgMCAwLTQuMjUgMi4xMjUgMi4xMjUgMCAwIDAgMC budgetaryIikgZmlsbD0iI0ZGRDcwMCIvPgo8L3N2Zz4K">
-    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI0ZGRDcwMCIgY2xhc3M9IndpZHRoLTYgaGVpZHRoLTYiPgogIDxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTIzIDIuMjVjMCAuNDE0LS4zMzYuNzUtLjc1Ljc1SDMuNzVjLS40MTQgMC0uNzUtLjMzNi0uNzUtLjc1VjEuNWMwLS40MTQuMzM2LS43NS43NS0uNzVoMTguNWMuNDE0IDAgLjc1LjMzNi43NS43NXYuNzVaTTE5LjUgNmEuNzUuNzUgMCAwIDAtLjc1Ljc1djExLjg5N0EzLjM3MiAzLjM3MiAwIDAgMCAxNi4xMjUgMjFhMy4zNzIgMy4zNzIgMCAwIDAtMi42MjUtMS4zNTNIMTAuMTI1Yy0uNDc3IDAtLjkzLS4xMTktMS4zMi0uMzMxQTQuNDgwIDQuNDgwIDAgMCAxIDUuMjUgMTQuODk2VjYuNzVhLjc1Ljc1IDAgMCAwLTEuNSAwVjE1LjEyYzAgMS43MjIgMS4xNzIgMy4yMSA1LjM3MyAzLjg3MWEzLjM3NSAzLjM3NSAwIDEgMCA0Ljc1NCAwYzQuMjAxLS42NjEgNS4zNzMtMi4xNDkgNS4zNzMtMy44NzFWNi43NUEuNzUuNzUgMCAwIDAgMTkuNSA2WiBtLTMuMzc1IDEyLjU2M2EyLjEyNSAyLjEyNSAwIDEgMCAwLTQuMjUgMi4xMjUgMi4xMjUgMCAwIDAgMC budgetaryIikgZmlsbD0iI0ZGRDcwMCIvPgo8L3N2Zz4K">
+    <!-- الأيقونات المضمنة -->
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI0ZGRDcwMCIgY2xhc3M9IndpZHRoLTYgaGVpZHRoLTYiPgogIDxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTIzIDIuMjVjMCAuNDE0LS4zMzYuNzUtLjc1Ljc1SDMuNzVjLS40MTQgMC0uNzUtLjMzNi0uNzUtLjc1VjEuNWMwLS40MTQuMzM2LS43NS43NS0uNzVoMTguNWMuNDE0IDAgLjc1LjMzNi43NS43NXYuNzVaTTE5LjUgNmEuNzUuNzUgMCAwIDAtLjc1Ljc1djExLjg5N0EzLjM3MiAzLjM3MiAwIDAgMCAxNi4xMjUgMjFhMy4zNzIgMy4zNzIgMCAwIDAtMi42MjUtMS4zNTNIMTAuMTI1Yy0uNDc3IDAtLjkzLS4xMTktMS43Mi0uMzMxQTQuNDgwIDQuNDgwIDAgMCAxIDUuMjUgMTQuODk2VjYuNzVhLjc1Ljc1IDAgMCAwLTEuNSAwVjE1LjEyYzAgMS43MjIgMS4xNzIgMy4yMSA1LjM3MyAzLjg3MWEzLjM3NSAzLjM3NSAwIDEgMCA0Ljc1NCAwYzQuMjAxLS42NjEgNS4zNzMtMi4xNDkgNS4zNzMtMy44NzFWNi43NUEuNzUuNzUgMCAwIDAgMTkuNSA2WiBtLTMuMzc1IDEyLjU2M2EyLjEyNSAyLjEyNSAwIDEgMCAwLTQuMjUgMi4xMjUgMi4xMjUgMCAwIDAgMC budgetaryIikgZmlsbD0iI0ZGRDcwMCIvPgo8L3N2Zz4K">
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI0ZGRDcwMCIgY2xhc3M9IndpZHRoLTYgaGVpZHRoLTYiPgogIDxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTIzIDIuMjVjMCAuNDE0LS4zMzYuNzUtLjc1Ljc1SDMuNzVjLS40MTQgMC0uNzUtLjMzNi0uNzUtLjc1VjEuNWMwLS40MTQuMzM2LS43NS43NS0uNzVoMTguNWMuNDE0IDAgLjc1LjMzNi43NS43NXYuNzVaTTE5LjUgNmEuNzUuNzUgMCAwIDAtLjc1Ljc1djExLjg5N0EzLjM3MiAzLjM3MiAwIDAgMCAxNi4xMjUgMjFhMy4zNzIgMy4zNzIgMCAwIDAtMi42MjUtMS4zNTNIMTAuMTI1Yy0uNDc3IDAtLjkzLS4xMTktMS43Mi0uMzMxQTQuNDgwIDQuNDgwIDAgMCAxIDUuMjUgMTQuODk2VjYuNzVhLjc1Ljc1IDAgMCAwLTEuNSAwVjE1LjEyYzAgMS43MjIgMS4xNzIgMy4yMSA1LjM3MyAzLjg3MWEzLjM3NSAzLjM3NSAwIDEgMCA0Ljc1NCAwYzQuMjAxLS42NjEgNS4zNzMtMi4xNDkgNS4zNzMtMy44NzFWNi43NUEuNzUuNzUgMCAwIDAgMTkuNSA2WiBtLTMuMzc1IDEyLjU2M2EyLjEyNSAyLjEyNSAwIDEgMCAwLTQuMjUgMi4xMjUgMi4xMjUgMCAwIDAgMC budgetaryIikgZmlsbD0iI0ZGRDcwMCIvPgo8L3N2Zz4K">
 
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 
+    <!-- (تعديل) رابط ملف الأنماط الخارجي -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="min-h-screen flex flex-col p-4">
 
+    <!-- الأزرار العلوية -->
     <div id="top-right-buttons"> 
         <button id="sync-btn" title="تحديث ومسح الكاش" aria-label="تحديث ومسح الكاش" class="metal-button">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
@@ -38,13 +43,17 @@
         </button>
     </div>
     
+    <!-- شاشة القفل -->
     <div id="security-overlay"></div>
     <div id="security-modal">
-        <div id="shield-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-20 h-20 mx-auto mb-4 text-gray-400">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 0 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
-            </svg>
+        <!-- استبدال الأيقونة بصورة -->
+        <div id="lock-icon-container" class="mb-4">
+            <img src="https://placehold.co/120x120/FFD700/1a202c?text=MASTER%0AKEY&font=lato" 
+                 alt="MASTER KEY Logo" 
+                 class="w-24 h-24 mx-auto rounded-full border-4 border-gold"
+                 onerror="this.style.display='none'"> 
         </div>
+        
         <h2 class="text-2xl font-bold text-white mb-6">مفتاح تصريح الدخول</h2>
         
         <div id="pin-container" class="gap-2 sm:gap-3">
@@ -58,7 +67,14 @@
             <span>دخول</span>
         </button>
         <p id="pin-error">الرمز خاطئ. جارٍ إعادة التوجيه...</p>
+
+        <!-- زر الاتصال للحصول على المفتاح -->
+        <button type="button" id="get-access-key-btn" class="w-full text-sm text-gray-300 hover:text-gold transition-colors duration-200 mt-6 py-2">
+            اتصل للحصول على مفتاح تصريح الدخول
+        </button>
     </div>
+
+    <!-- مودال اتصل بنا -->
     <div id="contact-modal-overlay" class="modal-overlay"></div>
     <div id="contact-modal" class="modal">
         <button id="contact-modal-close-btn" class="modal-close-btn">&times;</button>
@@ -86,7 +102,7 @@
         </div>
     </div>
 
-
+    <!-- المحتوى الرئيسي -->
     <main class="flex-grow flex items-center justify-center relative pt-16 sm:pt-4">
         <div class="w-full max-w-lg p-4 sm:p-6 md:p-8 card-container">
         
@@ -97,6 +113,7 @@
             ابحث عن معلومات الريموتات لسيارتك بدقة وفعالية.
         </p>
 
+        <!-- التبويبات -->
         <div class="flex border-b border-gray-700 mb-6">
             <button id="specs-tab" class="tab-btn active">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
@@ -118,6 +135,7 @@
             </button>
         </div>
 
+        <!-- فورم البحث -->
         <form id="ai-form" class="mb-6">
             
             <div id="specs-search-panel" class="search-panel active space-y-5">
@@ -218,6 +236,7 @@
             </div>
         </form>
         
+        <!-- حاوية النتائج -->
         <div id="result-container" class="mt-8">
             <h2 class="text-xl font-semibold mb-4 text-gray-200 flex items-center gap-2" id="results-title" style="display: none;">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
@@ -230,6 +249,7 @@
             <p id="message-box" class="mt-4 p-3 rounded-md text-center text-sm font-medium" style="display: none; background-color: var(--secondary-color); color: white;"></p>
         </div>
         
+        <!-- سجل البحث -->
         <div id="history-container" class="mt-8 w-full" style="display: none;">
             <div class="flex justify-between items-center mb-4">
                 <h2 class="text-xl font-semibold text-gray-200 flex items-center gap-2">
@@ -252,6 +272,7 @@
     </div>
     </main>
 
+    <!-- الفوتر -->
     <footer class="w-full max-w-lg text-center py-4 mx-auto">
         <a href="https://iqsd2020-ctrl.github.io/Web/" 
            target="_blank" 
@@ -261,6 +282,7 @@
         </a>
     </footer>
 
+    <!-- قالب: حالة عدم وجود نتائج -->
     <template id="empty-state-template">
         <div class="empty-state-container">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -271,7 +293,10 @@
         </div>
     </template>
 
+    <!-- (تعديل) رابط ملف السكريبت الخارجي -->
     <script src="script.js" defer></script>
 
 </body>
 </html>
+
+

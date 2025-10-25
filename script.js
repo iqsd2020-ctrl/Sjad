@@ -1,9 +1,10 @@
-// --- الكود الجافاسكريبت بالكامل كما هو في النسخة السابقة ---
-// (تم التأكد من صحته وتضمين التحسينات السابقة)
+// --- الكود الجافاسكريبت بالكامل ---
 
+// مفاتيح API (يجب تأمينها في بيئة الإنتاج)
 const GEMINI_API_KEY = "AIzaSyByERNaTPUtuleb62ok6YAOlADKoiSM-zM";
 const DEEPSEEK_API_KEY = "sk-3ac8d0208edd4ada9e949eb366a4a262";
 
+// عناصر DOM الرئيسية
 const form = document.getElementById('ai-form');
 const resultContainer = document.getElementById('result-container');
 const resultBox = document.getElementById('result-box');
@@ -15,11 +16,13 @@ const clearFormBtn = document.getElementById('clear-form-btn');
 const submitButton = form.querySelector('button[type="submit"]');
 const searchIcon = document.getElementById('search-icon'); 
 
+// عناصر مودال "اتصل بنا"
 const contactButton = document.getElementById('contact-us-btn');
 const contactModalOverlay = document.getElementById('contact-modal-overlay');
 const contactModal = document.getElementById('contact-modal');
 const contactCloseModalBtn = document.getElementById('contact-modal-close-btn');
 
+// عناصر الإكمال التلقائي
 const typeInput = document.getElementById('type');
 const modelInput = document.getElementById('model');
 const typeSuggestions = document.getElementById('type-suggestions');
@@ -27,16 +30,18 @@ const modelSuggestions = document.getElementById('model-suggestions');
 const vinInput = document.getElementById('vin_input');
 const vinCounter = document.getElementById('vin-counter');
 
+// بيانات الإكمال التلقائي
 let carMakes = [];
 let carModels = [];
-
 const carMakesUrl = 'https://raw.githubusercontent.com/iqsd2020-ctrl/Sjad/refs/heads/main/%D9%85%D8%A7%D8%B1%D9%83%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA.csv';
 const carModelsUrl = 'https://raw.githubusercontent.com/iqsd2020-ctrl/Sjad/refs/heads/main/%D8%B7%D8%B1%D8%A7%D8%B2%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA.csv';
 
+// إدارة حالة التبويبات
 let currentSearchMode = 'specs'; 
 const tabs = document.querySelectorAll('.tab-btn');
 const panels = document.querySelectorAll('.search-panel');
 
+// عناصر سجل البحث
 const historyContainer = document.getElementById('history-container');
 const historyBox = document.getElementById('history-box');
 const clearHistoryBtn = document.getElementById('clear-history-btn');
@@ -44,7 +49,7 @@ const MAX_HISTORY = 10;
 
 const VIN_REGEX = /^[A-HJ-NPR-Z0-9]{17}$/;
 
-
+// --- دوال المودال (اتصل بنا) ---
 function openModal(modal, overlay) {
     overlay.style.display = 'block';
     modal.style.display = 'block';
@@ -58,6 +63,7 @@ contactButton.addEventListener('click', () => openModal(contactModal, contactMod
 contactCloseModalBtn.addEventListener('click', () => closeModal(contactModal, contactModalOverlay));
 contactModalOverlay.addEventListener('click', () => closeModal(contactModal, contactModalOverlay));
 
+// --- التبديل بين التبويبات ---
 tabs.forEach(tab => {
     tab.addEventListener('click', () => {
         tabs.forEach(t => t.classList.remove('active'));
@@ -75,6 +81,7 @@ tabs.forEach(tab => {
     });
 });
 
+// --- معالج إرسال الفورم الرئيسي ---
 form.addEventListener('submit', async function(event) {
     event.preventDefault(); 
     
@@ -94,6 +101,7 @@ form.addEventListener('submit', async function(event) {
     let resultData = {}; 
 
     try {
+        // (1) البحث بالمواصفات
         if (currentSearchMode === 'specs') {
             const year = document.getElementById('year').value;
             const type = typeInput.value;
@@ -123,6 +131,7 @@ form.addEventListener('submit', async function(event) {
                 id: `specs-res-${Date.now()}`
             };
 
+        // (2) البحث بالـ VIN
         } else if (currentSearchMode === 'vin') {
             const vin = vinInput.value.toUpperCase();
             
@@ -149,6 +158,7 @@ form.addEventListener('submit', async function(event) {
                 id: `vin-res-${vin}`
             };
 
+        // (3) البحث العكسي
         } else if (currentSearchMode === 'reverse') {
             const fccId = document.getElementById('fcc_input').value.toUpperCase();
             const partNumber = document.getElementById('pn_input').value.toUpperCase();
@@ -177,6 +187,7 @@ form.addEventListener('submit', async function(event) {
             };
         }
         
+        // --- استدعاء API (Gemini أولاً، ثم DeepSeek كاحتياط) ---
         let rawText;
         try {
             console.log("Attempting search with Gemini...");
@@ -195,12 +206,15 @@ form.addEventListener('submit', async function(event) {
         }
         
         saveToHistory(searchData);
-        
         resultData.rawText = rawText; 
         
+        // --- عرض النتائج النصية ---
         let resultsFound = false;
-        if (currentSearchMode === 'specs' || currentSearchMode === 'vin') {
+        if (currentSearchMode === 'specs') {
             resultsFound = displaySpecsResults(rawText, displayTitle, resultData);
+        } else if (currentSearchMode === 'vin') {
+            resultsFound = displaySpecsResults(rawText, displayTitle, resultData);
+            // لا يتم طلب صورة للـ VIN حسب الطلب
         } else if (currentSearchMode === 'reverse') {
             resultsFound = displayReverseResults(rawText, displayTitle, resultData);
         }
@@ -222,6 +236,7 @@ form.addEventListener('submit', async function(event) {
     }
 });
 
+// --- زر مسح الفورم ---
 clearFormBtn.addEventListener('click', function() {
     const activePanel = document.querySelector('.search-panel.active');
     if (activePanel) {
@@ -242,6 +257,7 @@ clearFormBtn.addEventListener('click', function() {
     resultsTitle.style.display = 'none';
 });
 
+// --- دوال إنشاء استعلامات الـ API ---
 function createSpecsQuery(year, type, model, market) {
     return `ابحث عن بيانات الريموت لسيارة:
 - الماركة: ${type}
@@ -281,6 +297,7 @@ CAR_7_NOTES: [ملاحظات 7 أو "N/A"]
 `;
 }
 
+// --- دوال تعليمات التنسيق للـ API ---
 function getSpecsFormatInstruction() {
     return `الرجاء تنسيق الرد **فقط** بالشكل التالي (لا تضف أي نص إضافي، استخدم "غير متوفر" أو "N/A" إذا لم تُعثر على بيانات):
 FCC_ID: [البيانات أو "غير متوفر"]
@@ -318,6 +335,7 @@ ALT_3_PN: [بيانات البديل 3 أو "N/A"]
 ALT_3_NOTES: [ملاحظات 3 أو "N/A"]`;
 }
 
+// --- دوال التعليمات النظامية للـ API ---
 function createSpecsSystemInstruction() {
     return {
         parts: [{ text: "أنت مساعد خبير في قطع غيار السيارات، متخصص في ريموتات المفاتيح. ابحث عن المعلومات المطلوبة بدقة والتزم **تماماً** بالتنسيق المطلوب في نهاية طلب المستخدم. لا تضف أي مقدمات أو خواتيم. يجب أن تكون جميع القيم باللغة العربية باستثناء FCC ID و Part Number و Key Blade." }]
@@ -335,6 +353,7 @@ function createVinSystemInstruction() {
     };
 }
 
+// --- دوال استدعاء API (Gemini و DeepSeek) ---
 async function callGeminiAPI(userQuery, systemInstruction) {
     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${GEMINI_API_KEY}`;
 
@@ -408,13 +427,22 @@ async function callDeepSeekAPI(userQuery, systemInstruction) {
     throw new Error("فشل الاتصال بـ DeepSeek API بعد عدة محاولات.");
 }
 
+// --- (حذف) دوال جلب وعرض صورة الريموت ---
 
+// --- دوال عرض النتائج ---
+
+/**
+ * يستخرج البيانات من النص الخام
+ */
 function extract(rawText, key) {
     const regex = new RegExp(`^${key}: (.*)`, "im"); 
     const match = rawText.match(regex);
     return match && match[1] ? match[1].trim() : "غير متوفر";
 }
 
+/**
+ * يعرض حالة "لا توجد نتائج"
+ */
 function showEmptyState() {
     resultsTitle.style.display = 'none';
     const template = document.getElementById('empty-state-template');
@@ -422,6 +450,9 @@ function showEmptyState() {
     resultBox.appendChild(clone);
 }
     
+/**
+ * يعرض نتائج البحث بالمواصفات أو الـ VIN
+ */
 function displaySpecsResults(rawText, title, resultData) {
     resultBox.innerHTML = ''; 
 
@@ -479,7 +510,8 @@ function displaySpecsResults(rawText, title, resultData) {
 
             <svg class="accordion-icon w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </div>
-        <div class="accordion-content">
+        <!-- (تعديل) إضافة ID فريد للمحتوى -->
+        <div class="accordion-content" id="content-${resultData.id}">
             <div class="p-4 border border-gray-700 rounded-lg overflow-x-auto">
                 <table class="results-table">
                     <tbody>
@@ -579,6 +611,9 @@ function displaySpecsResults(rawText, title, resultData) {
     return true;
 }
 
+/**
+ * يعرض نتائج البحث العكسي
+ */
 function displayReverseResults(rawText, title, resultData) {
     resultBox.innerHTML = '';
     
@@ -641,7 +676,8 @@ function displayReverseResults(rawText, title, resultData) {
 
             <svg class="accordion-icon w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </div>
-        <div class="accordion-content active">
+        <!-- (تعديل) إضافة ID فريد للمحتوى -->
+        <div class="accordion-content active" id="content-${resultData.id}">
             <div class="p-4 border border-gray-700 rounded-lg scrollable-card-container">
                 ${carsHtml}
             </div>
@@ -651,6 +687,7 @@ function displayReverseResults(rawText, title, resultData) {
     return true;
 }
 
+// --- دوال مساعدة (نسخ، فتح أكورديون، إظهار رسائل) ---
 function copyToClipboard(text, iconElement) {
    if (!text || text === 'غير متوفر' || text === 'N/A') return;
    
@@ -728,6 +765,7 @@ function showMessage(message, type) {
     }, duration);
 }
 
+// --- دالة جلب البيانات مع إعادة المحاولة ---
 async function fetchWithRetry(url, options, maxRetries = 3, initialDelay = 1000) {
     let delay = initialDelay;
     for (let i = 0; i < maxRetries; i++) {
@@ -752,6 +790,7 @@ async function fetchWithRetry(url, options, maxRetries = 3, initialDelay = 1000)
     throw new Error("فشل الاتصال بالـ API بعد عدة محاولات.");
 }
 
+// --- دوال الإكمال التلقائي ---
 async function fetchCSV(url) {
     try {
         const response = await fetch(url);
@@ -794,6 +833,7 @@ function showSuggestions(value, list, container, inputElement) {
     }
 }
 
+// --- دوال سجل البحث ---
 function loadHistory() {
     const history = JSON.parse(localStorage.getItem('searchHistory') || '[]');
     historyBox.innerHTML = '';
@@ -845,6 +885,7 @@ function populateFormFromHistory(item) {
     }
 }
 
+// --- دالة مشاركة النتائج ---
 async function shareResult(resultData) {
     let text = `*نتائج بحث MASTER KEY*\n\n`;
     text += `*البحث:* ${resultData.title}\n`;
@@ -883,6 +924,7 @@ async function shareResult(resultData) {
     }
 }
 
+// --- دالة تحديث عداد VIN ---
 function updateVinCounter(length) {
     vinCounter.textContent = `(${length}/17)`;
     if (length === 17 && VIN_REGEX.test(vinInput.value)) {
@@ -892,8 +934,10 @@ function updateVinCounter(length) {
     }
 }
 
+// --- معالج تحميل الصفحة ---
 document.addEventListener('DOMContentLoaded', async () => {
     
+    // --- منطق شاشة القفل ---
     const CORRECT_PIN = "1420";
     const securityOverlay = document.getElementById('security-overlay');
     const securityModal = document.getElementById('security-modal');
@@ -947,8 +991,19 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
 
+    // (جديد) ربط زر "الحصول على المفتاح"
+    const getAccessKeyBtn = document.getElementById('get-access-key-btn');
+    if (getAccessKeyBtn) {
+        getAccessKeyBtn.addEventListener('click', () => {
+            // الدالة openModal معرفة في النطاق العام
+            openModal(contactModal, contactModalOverlay);
+        });
+    }
+
+
     pinInputs[0].focus();
     
+    // --- منطق زر التحديث (Sync) ---
     const syncBtn = document.getElementById('sync-btn');
     if (syncBtn) {
         syncBtn.addEventListener('click', async () => {
@@ -971,6 +1026,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             document.body.appendChild(tempMsg);
             
             try {
+                // 1. إلغاء تسجيل Service Workers
                 if ('serviceWorker' in navigator) {
                     const registrations = await navigator.serviceWorker.getRegistrations();
                     if (registrations.length > 0) {
@@ -983,6 +1039,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     }
                 }
                 
+                // 2. مسح الكاش
                 if (window.caches) {
                     const cacheNames = await window.caches.keys();
                     await Promise.all(cacheNames.map(cacheName => {
@@ -992,6 +1049,22 @@ document.addEventListener('DOMContentLoaded', async () => {
                     console.log('تم مسح الكاش بنجاح.');
                 } else {
                     console.log('API الكاش غير مدعوم.');
+                }
+
+                // (جديد) 3. مسح Local Storage بالكامل
+                try {
+                    localStorage.clear();
+                    console.log('تم مسح Local Storage بنجاح.');
+                } catch (e) {
+                    console.error('فشل في مسح Local Storage:', e);
+                }
+
+                // (جديد) 4. مسح Session Storage بالكامل
+                try {
+                    sessionStorage.clear();
+                    console.log('تم مسح Session Storage بنجاح.');
+                } catch (e) {
+                    console.error('فشل في مسح Session Storage:', e);
                 }
 
                 setTimeout(() => {
@@ -1010,11 +1083,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
+    // --- تحميل بيانات الإكمال التلقائي وسجل البحث ---
     carMakes = await fetchCSV(carMakesUrl);
     carModels = await fetchCSV(carModelsUrl);
     
     loadHistory();
     
+    // --- ربط باقي المستمعين ---
     clearHistoryBtn.addEventListener('click', () => {
         localStorage.removeItem('searchHistory');
         loadHistory();
