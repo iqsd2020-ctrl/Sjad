@@ -938,7 +938,7 @@ function updateVinCounter(length) {
 document.addEventListener('DOMContentLoaded', async () => {
     
     // --- منطق شاشة القفل ---
-    const CORRECT_PIN = "1420";
+    const CORRECT_PIN = "0000";
     const securityOverlay = document.getElementById('security-overlay');
     const securityModal = document.getElementById('security-modal');
     const pinInputs = document.querySelectorAll('#pin-container input');
