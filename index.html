@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة ويب بسيطة</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 1. استيراد خط Noto Sans Arabic ليكون واضحاً وجميلاً */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap');
+        body {
+            /* 2. تطبيق خط Noto Sans Arabic على كامل الصفحة */
+            font-family: 'Noto Sans Arabic', sans-serif;
+        }
+
+        /* إضافة keyframes لإنشاء تأثير "التكبير والتصغير" */
+        @keyframes scale-pulse {
+            0%, 100% {
+                transform: scale(1); /* الحجم الطبيعي */
+            }
+            50% {
+                transform: scale(1.05); /* تكبير بسيط (5%) */
+            }
+        }
+
+        /* إنشاء صنف (class) لتطبيق هذا الأنيميشن */
+        .custom-pulse {
+            animation: scale-pulse 2s infinite ease-in-out;
+        }
+        
+        /* تنسيقات لتوسيط المحتوى في الصفحة بالكامل */
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<!-- 
+  تغيير الألوان الافتراضية للجسم إلى الأسود والأبيض لتتناسب مع خط Noto Sans Arabic
+--><body class="bg-white dark:bg-black text-gray-900 dark:text-white transition-colors duration-300 flex flex-col items-center justify-center p-6">
+
+    <div class="mb-8">
+        <!-- 3. تغيير لون الخط إلى الأسود النقي في الوضع الفاتح، والأبيض في الوضع المظلم --><h1 class="text-3xl font-bold text-center text-black dark:text-white">
+            انتقل للتطبيق الجديد
+        </h1>
+    </div>
+
+    <!-- 4. تم تغيير "max-w-xs" إلى "max-w-xs" مرة أخرى لضمان الحجم المطلوب (أصغر مرتين) --><!--    يمكنك التعديل هنا إلى "max-w-2xs" أو "max-w-[100px]" إذا أردت تصغير أكثر --><div class="w-full max-w-xs"> 
+        <a href="https://iqsd2020-ctrl.github.io/MK/" target="_blank" rel="noopener noreferrer">
+            <img 
+                src="https://raw.githubusercontent.com/iqsd2020-ctrl/MK/refs/heads/main/png/Icon.png" 
+                alt="صورة توضيحية" 
+                class="w-full h-auto rounded-lg custom-pulse"
+                onerror="this.src='https://placehold.co/800x400/cccccc/ffffff?text=خطأ+في+تحميل+الصورة&font=noto+sans+arabic'; this.onerror=null;"
+            >
+        </a>
+    </div>
+
+    <!-- 5. إضافة نص "اضغط على الصورة" بلون رمادي خفيف --><div class="mt-4">
+        <p class="text-lg text-gray-500 dark:text-gray-400">
+            اضغط على الصورة
+        </p>
+    </div>
+
+</body>
+</html>
+
+
